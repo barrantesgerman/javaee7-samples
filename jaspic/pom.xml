@@ -25,6 +25,12 @@
              in a Servlet via HttpServletRequest#getUserPrincipal
          -->
         <module>custom-principal</module>
+        
+        <!-- Tests a simple authentication like basic-authentication, but uses
+             request.authenticate instead of the authentication prior to invoking
+             the resource.
+         -->
+        <module>programmatic-authentication</module>
 
         <!-- Tests that the main methods of JASPIC artifacts like the SAM are called by the container at the right moment -->
         <module>lifecycle</module>
@@ -57,6 +63,10 @@
         <!-- Tests that an established authenticated identity by JASPIC propagates correctly to the EJB layer -->
         <module>ejb-propagation</module>
         
+        <!-- Tests that an established authenticated identity by JASPIC via the register session feature propagates 
+            correctly to the EJB layer -->
+        <module>ejb-register-session</module>
+        
         <!-- Tests that an established authenticated identity by JASPIC propagates correctly to a JACC provider -->
         <module>jacc-propagation</module>
         
@@ -75,4 +85,5 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
+
 </project>
